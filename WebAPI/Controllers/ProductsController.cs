@@ -10,7 +10,7 @@ using System.Globalization;
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
-    //[ApiController]
+    [ApiController]
     public class ProductsController : ControllerBase
     {
         IProductService _productService;
@@ -46,7 +46,7 @@ namespace WebAPI.Controllers
         [HttpGet("getproductdetails")]
         public IActionResult GetProductDetails(int categoryId)
         {
-            var result = _productService.GetProductDetalils();
+            var result = _productService.GetProductDetails();
             if (result.Success)
             {
                 return Ok(result);
