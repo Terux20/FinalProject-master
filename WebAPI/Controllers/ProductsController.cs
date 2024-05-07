@@ -9,7 +9,9 @@ using System.Globalization;
 
 namespace WebAPI.Controllers
 {
+ 
     [Route("api/[controller]")]
+    //apicontroller şu bu işe yarar
     [ApiController]
     public class ProductsController : ControllerBase
     {

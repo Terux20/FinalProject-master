@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Core.Utilities.IoC;
 using Core.DependencyResolvers;
 using Core.Extensions;
+using Core.Extentions;
 namespace WebAPI
 {
     public class Program
@@ -60,6 +61,8 @@ namespace WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.ConfigureCustomExceptionMiddleware();
+
             app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
 
             app.UseHttpsRedirection();
